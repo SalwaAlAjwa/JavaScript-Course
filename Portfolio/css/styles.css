@@ -1,0 +1,358 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+    color: #1e1e1e;
+    background-color: #f8f9fa;
+}
+
+body.fade-out {
+    opacity: .1;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", Optima;
+    text-align: center;
+    margin-top: 3%;
+    color: #2b2b2b;
+}
+
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+.white-text {
+    color: #fdfdfd;
+    padding-top: 10vh;
+}
+
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: #333;
+}
+
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+.center {
+    text-align: center;
+}
+
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+a {
+    color: #0047ab;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+q {
+    font-style: italic;
+}
+
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+img:hover {
+    filter: grayscale(5%);
+}
+
+footer {
+    padding: 2%;
+    background-color: #f0f0f0;
+}
+
+/* Navbar */
+.Navbar {
+    overflow: hidden;
+    background-color: #1a1f1f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    animation: moveNav 5s;
+}
+
+@keyframes moveNav {
+    from {left: -100vw;}
+    to { left: 0vw;}
+}
+
+.Navbar a {
+    float: left;
+    display: block;
+    color: #f8f8f8;
+    padding: .75vw 1vw;
+    text-decoration: none;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative;
+    animation: moveNavText 5.75s;
+}
+
+@keyframes moveNavText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+.Navbar a:hover {
+    background-color: #e6e6e6;
+    color: #111;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+}
+
+.Navbar a.active {
+    background-color: #999999;
+}
+
+/* Video */
+#Typing_Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+.Video_Text {
+    background: rgba(20, 20, 20, 0.5);
+    color: white;
+    width: 100%;
+    height: 100vh;
+    padding-top: 2vh;
+    position: relative;
+    animation: moveVideoText 5.75s;
+}
+
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+/* Slideshow */
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.mySlides {
+    display: none;
+}
+
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+#Slideshow_Container a {
+    text-decoration: none;
+}
+
+.Slideshow_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%;
+}
+
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: #777;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: #eee;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: #333;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+/* Columns */
+.Column_1 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #e0e0e0;
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #333a3a;
+}
+
+.Row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Contact Button */
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: #f5f5f5;
+    color: #111;
+    border: solid #333;
+    cursor: pointer;
+    animation: movePopup 5s;
+}
+
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0;
+    border: none;
+    background: #dcdcdc;
+    font-size: 1vw;
+}
+
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: #222;
+    transition-duration: 1s;
+    border-color: #aaa;
+}
+
+.form-container .btn {
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+.form-container .cancel {
+    background-color: #1a1a1a;
+    color: white;
+    border-color: gray;
+}
+
+/* Quote Box */
+.Quote_Box {
+    background-color: #f5f5f5;
+    font-size: 1.75vw;
+    text-align: center;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    padding: 2%;
+}
